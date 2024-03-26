@@ -1,0 +1,13 @@
+--feel free to play around with the names of the tables or the database
+--but ensure the same is reflected in your java code.
+
+
+create database test1;
+
+create table users(id int primary key not null, name varchar(50), password varchar(20), email varchar(50), contact varchar(10));
+
+create table macro (m_id int primary key not null, id int ,bcalories double, bprotein double, lcalories double, lprotein double, scalories double, sprotein double, dcalories double, dprotein double, foreign key (id) references users(id));
+
+create table bmi(bmi_id int primary key not null, id int, bmi_value float, foreign key(id) references users(id));
+
+create table water_tracker(wid int primary key not null, id int, consumed float,foreign key(id) references users(id));
